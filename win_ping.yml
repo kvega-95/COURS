@@ -5,13 +5,14 @@
   tasks:
   - name: Ping Windows
     win_ping:
-#  - name: Sending an e-mail
-#    mail:
-#      host: smtp-mail.outlook.com
-#      from: kekam@hotmail.fr
-#      password: Kevin19011993$
-#      port: 587
-#      to: k.vegadelgado@gmail.com
-#      subject: Ansible-report
-#      body: System {{ ansible_hostname }} has been successfully pinged the Windows machine.
-#      secure: always
+  - name: Sending an e-mail
+    mail:
+      host: smtp-mail.outlook.com
+      from: kekam@hotmail.fr
+      password: Kevin19011993$
+      port: 587
+      to: k.vegadelgado@gmail.com
+      subject: Ansible-report
+      body: System {{ ansible_hostname }} has been successfully pinged the Windows machine.
+      secure: always
+    delegate_to: 192.168.1.157
