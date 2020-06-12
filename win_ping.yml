@@ -14,5 +14,5 @@
       to: k.vegadelgado@gmail.com
       subject: Ansible-report
       body: System {{ ansible_hostname }} has been successfully pinged the Windows machine.
-      secure: always
+      secure: try
     delegate_to: localhost
