@@ -15,6 +15,10 @@
 #    osid: debin6_64Guest
   vars:
     name:
+    storage:
+    datastore:
+    RAM:
+    CPU:
   tasks:
   - name: Create a VM from template
     vmware_guest:
@@ -26,14 +30,25 @@
       state: present
       #template: vm1
       disk:
-      - size_gb: 1
+      - size_gb: "{{ storage }}"
         type: thin
-        datastore: datastore1
+        datastore: "{{ datastore }}"
       hardware:
-        memory_mb: 512
-        num_cpus: 1
+        memory_mb: "{{ RAM }}"
+        num_cpus: " {{CPU }}"
         scsi: paravirtual
       wait_for_ip_address: yes
       folder: /
       guest_id: centos64guest
     register: deploy
+  - name: Sending an e-mail using the remote machine, not the Ansible controller node
+  mail:
+    host: smtp-mail.outlook.com
+    from: kekam@hotmail.fr
+    password: Kevin19011993$
+    port: 587
+    to: k.vegadelgado@gmail.com
+    subject: Ansible-report
+    body: System {{ ansible_hostname }} has been successfully provisioned.
+    secure: always
+    
