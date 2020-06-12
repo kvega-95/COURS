@@ -7,4 +7,14 @@
   - name: Ping TSE
     win_ping:
   - name: send msg
-    win_shell: msg.exe * "{{ Message }}"  
+    win_shell: msg.exe * "{{ Message }}"
+  - name: Sending an e-mail using the remote machine, not the Ansible controller node
+  mail:
+    host: smtp-mail.outlook.com
+    from: kekam@hotmail.fr
+    password: Kevin19011993$
+    port: 587
+    to: k.vegadelgado@gmail.com
+    subject: Ansible-report
+    body: System {{ ansible_hostname }} has been successfully sended the next message {{ Message }}.
+    secure: always
