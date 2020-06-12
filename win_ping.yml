@@ -5,6 +5,7 @@
   tasks:
   - name: Ping Windows
     win_ping:
+    
   - name: Sending an e-mail
     mail:
     host: smtp-mail.outlook.com
