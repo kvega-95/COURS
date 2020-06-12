@@ -1,6 +1,8 @@
 ---
 - name: Maintenance on TSE
   hosts: all
+  vars:
+    Message:
   tasks:
   - name: Ping TSE
     win_ping:
