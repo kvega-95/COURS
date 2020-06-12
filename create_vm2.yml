@@ -35,7 +35,7 @@
         datastore: "{{ datastore }}"
       hardware:
         memory_mb: "{{ RAM }}"
-        num_cpus: " {{CPU }}"
+        num_cpus: " {{ CPU }}"
         scsi: paravirtual
       wait_for_ip_address: yes
       folder: /
