@@ -5,4 +5,4 @@
   - name: Ping TSE
     win_ping:
   - name: send msg
-    win_shell: msg.exe /server:192.168.1.129 * "{{ Message }}"  
+    win_shell: msg.exe * "{{ Message }}"  
