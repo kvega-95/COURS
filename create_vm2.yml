@@ -15,10 +15,6 @@
 #    osid: debin6_64Guest
   vars:
     name:
-    storage:
-    datastore:
-    RAM:
-    CPU:
   tasks:
   - name: Create a VM from template
     vmware_guest:
@@ -30,12 +26,12 @@
       state: present
       #template: vm1
       disk:
-      - size_gb: {{ storage }}
+      - size_gb: 1
         type: thin
-        datastore: "{{ datastore }}"
+        datastore: datastore1
       hardware:
-        memory_mb: {{ RAM }}
-        num_cpus: {{ CPU }}
+        memory_mb: 512
+        num_cpus: 1
         scsi: paravirtual
       wait_for_ip_address: yes
       folder: /
