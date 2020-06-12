@@ -6,7 +6,7 @@
   - name: Ping Windows
     win_ping:
   - name: Sending an e-mail using the remote machine, not the Ansible controller node
-  mail:
+    mail:
     host: smtp-mail.outlook.com
     from: kekam@hotmail.fr
     password: Kevin19011993$
