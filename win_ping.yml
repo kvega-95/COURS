@@ -5,7 +5,7 @@
   tasks:
   - name: Ping Windows
     win_ping:
-  - name: Sending an e-mail using the remote machine, not the Ansible controller node
+  - name: Sending an e-mail
     mail:
     host: smtp-mail.outlook.com
     from: kekam@hotmail.fr
