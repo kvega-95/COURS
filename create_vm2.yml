@@ -30,12 +30,12 @@
       state: present
       #template: vm1
       disk:
-      - size_gb: "{{ storage }}"
+      - size_gb: {{ storage }}
         type: thin
         datastore: "{{ datastore }}"
       hardware:
-        memory_mb: "{{ RAM }}"
-        num_cpus: " {{ CPU }}"
+        memory_mb: {{ RAM }}
+        num_cpus: {{ CPU }}
         scsi: paravirtual
       wait_for_ip_address: yes
       folder: /
