@@ -13,6 +13,8 @@
 #    memory: 10
 #    cpucount: 1
 #    osid: debin6_64Guest
+  vars:
+    name:
   tasks:
   - name: Create a VM from template
     vmware_guest:
@@ -20,7 +22,7 @@
       username: root
       password: 'Menzo2019$'
       validate_certs: no
-      #name: testvm_5
+      name: {{ name }}
       state: present
       #template: vm1
       disk:
