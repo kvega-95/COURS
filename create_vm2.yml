@@ -36,5 +36,5 @@
       wait_for_ip_address: yes
       folder: /
       guest_id: centos64guest
-    register: deploy
+    #register: deploy
     
