@@ -22,7 +22,7 @@
       username: root
       password: 'Menzo2019$'
       validate_certs: no
-      name: {{ name }}
+      name: "{{ name }}"
       state: present
       #template: vm1
       disk:
