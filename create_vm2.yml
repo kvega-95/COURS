@@ -20,7 +20,7 @@
       username: root
       password: 'Menzo2019$'
       validate_certs: no
-      name: testvm_5
+      #name: testvm_5
       state: present
       #template: vm1
       disk:
