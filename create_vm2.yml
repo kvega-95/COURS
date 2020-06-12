@@ -1,18 +1,6 @@
 ---
 - name: Create VM from a template
   hosts: localhost
-  vars_prompt:
-  - name: "Vcenter hostname"
-    prompt: "Enter vcenter hostname"
-    private: no
-    default: "192.168.1.136"
-  - name: "vcenter User"
-    prompt: "Entrez votre Vcenter username"
-    private: no
-    default: "root"
-  - name: "Vcenter pass"
-    prompt: "Entrer votre password"
-    private: yes
 #  vars:
 #    datacenter: 'datacenter1'
 #    esxi_host: '192.168.1.136'
