@@ -1,0 +1,49 @@
+---
+- name: Create VM from a template
+  hosts: localhost
+  vars_prompt:
+  - name: "Vcenter hostname"
+    prompt: "Enter vcenter hostname"
+    private: no
+    default: "192.168.1.136"
+  - name: "vcenter User"
+    prompt: "Entrez votre Vcenter username"
+    private: no
+    default: "root"
+  - name: "Vcenter pass"
+    prompt: "Entrer votre password"
+    private: yes
+#  vars:
+#    datacenter: 'datacenter1'
+#    esxi_host: '192.168.1.136'
+#    notes: 'Created by Ansible'
+#    vcenter_hostname: 192.168.1.136
+#    vcenter_user: root
+#    vcenter_pass: Kikou1012$
+#    datastore: datastore1
+#    network: VM Network
+#    memory: 10
+#    cpucount: 1
+#    osid: debin6_64Guest
+  tasks:
+  - name: Create a VM from template
+    vmware_guest:
+      hostname: 192.168.1.136
+      username: root
+      password: 'Menzo2019$'
+      validate_certs: no
+      name: testvm_5
+      state: present
+      #template: vm1
+      disk:
+      - size_gb: 1
+        type: thin
+        datastore: datastore1
+      hardware:
+        memory_mb: 512
+        num_cpus: 1
+        scsi: paravirtual
+      wait_for_ip_address: yes
+      folder: /
+      guest_id: centos64guest
+    register: deploy
