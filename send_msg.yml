@@ -1,11 +1,6 @@
 ---
 - name: Maintenance on TSE
-  hosts: all
-  vars_prompt:
-      - name: "Message"
-        prompt: "Entrez votre message"
-        private: no
-        default: "localhost"
+  hosts: windows
   vars:
     Message: Toto
   tasks:
