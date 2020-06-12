@@ -15,4 +15,4 @@
       subject: Ansible-report
       body: System {{ ansible_hostname }} has been successfully pinged the Windows machine.
       secure: always
-    delegate_to: 192.168.1.129
+    delegate_to: localhost
