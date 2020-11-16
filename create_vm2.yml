@@ -18,7 +18,7 @@
   tasks:
   - name: Create a VM from template
     vmware_guest:
-      hostname: 192.168.1.136
+      hostname: 192.168.1.126
       username: root
       password: 'Menzo2019$'
       validate_certs: no
@@ -33,7 +33,7 @@
         memory_mb: 512
         num_cpus: 1
         scsi: paravirtual
-      wait_for_ip_address: yes
+      wait_for_ip_address: no
       folder: /
       guest_id: centos64guest
     #register: deploy
