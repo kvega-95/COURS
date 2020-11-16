@@ -21,7 +21,7 @@
     vcenter_hostname:
     memory-mb:
     cpu:
-    vcenter_pass
+    vcenter_pass:
   tasks:
   - name: Create a VM from template
     vmware_guest:
