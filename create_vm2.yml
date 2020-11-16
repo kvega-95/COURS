@@ -28,7 +28,7 @@
       disk:
       - size_gb: 1
         type: thin
-        datastore: datastore1
+        datastore: HDD_2To
       hardware:
         memory_mb: 512
         num_cpus: 1
