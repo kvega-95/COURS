@@ -37,7 +37,7 @@
         type: thin
         datastore: "{{ datacenter }}"
       hardware:
-        memory_mb: "{{ memory-mb }}"
+        memory_mb: "{{ memory_mb }}"
         num_cpus: "{{ cpu }}"
         scsi: paravirtual
       wait_for_ip_address: no
