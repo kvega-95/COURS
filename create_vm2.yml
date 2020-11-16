@@ -15,12 +15,19 @@
 #    osid: debin6_64Guest
   vars:
     name:
+    datacenter:
+    notes:
+    vcenter_user:
+    vcenter_hostname:
+    memory-mb:
+    cpu:
+    vcenter_pass
   tasks:
   - name: Create a VM from template
     vmware_guest:
-      hostname: 192.168.1.26
-      username: root
-      password: 'Menzo2019$'
+      hostname: "{{ name }}"
+      username: "{{ vcenter_user }}"
+      password: "{{ vcenter_pass }}"
       validate_certs: no
       name: VM1
       state: present
@@ -28,10 +35,10 @@
       disk:
       - size_gb: 1
         type: thin
-        datastore: HDD_2To
+        datastore: "{{ datacenter }}"
       hardware:
-        memory_mb: 512
-        num_cpus: 1
+        memory_mb: "{{ memory-mb }}"
+        num_cpus: "{{ cpu }}"
         scsi: paravirtual
       wait_for_ip_address: no
       folder: /
