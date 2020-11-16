@@ -25,11 +25,11 @@
   tasks:
   - name: Create a VM from template
     vmware_guest:
-      hostname: "{{ name }}"
+      hostname: "{{ vcenter_hostname }}"
       username: "{{ vcenter_user }}"
       password: "{{ vcenter_pass }}"
       validate_certs: no
-      name: VM1
+      name: "{{ name }}"
       state: present
       #template: vm1
       disk:
