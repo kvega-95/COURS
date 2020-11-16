@@ -18,7 +18,7 @@
   tasks:
   - name: Create a VM from template
     vmware_guest:
-      hostname: 192.168.1.126
+      hostname: 192.168.1.26
       username: root
       password: 'Menzo2019$'
       validate_certs: no
