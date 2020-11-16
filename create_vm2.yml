@@ -19,7 +19,7 @@
     notes:
     vcenter_user:
     vcenter_hostname:
-    memory-mb:
+    memory_mb:
     cpu:
     vcenter_pass:
   tasks:
