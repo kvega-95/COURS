@@ -2,5 +2,11 @@
 - name: Update apt-get repo and cache
   hosts: linux
   tasks:
+    - name: apt install
+      apt:
+        name:
+          - python-apt
+      state: latest
+      cache_valid_time: 3600
     - name: Apt 
       apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
