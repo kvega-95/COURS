@@ -1,7 +1,6 @@
 ---
-- name: Update apt-get repo and cache
-  hosts: linux
-  tasks:
+  - hosts: linux
+    tasks:
     - name: apt install
       apt:
         name:
