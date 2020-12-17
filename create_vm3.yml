@@ -1,0 +1,54 @@
+---
+- hosts: all
+gather_facts: false
+connection: local
+
+vars_prompt:
+- name: "vsphere_password"
+prompt: "vSphere Password"
+- name: "notes"
+prompt: "VM notes"
+private: no
+default: "Deployed with ansible"
+
+tasks:
+# get date
+- set_fact: creationdate="{{lookup('pipe','date "+%Y/%m/%d %H:%M"')}}"
+
+# Create a VM from a template
+- name: create the VM
+vmware_guest:
+hostname: '{{ vsphere_host }}'
+username: '{{ vsphere_user }}'
+password: '{{ vsphere_password }}'
+validate_certs: no
+esxi_hostname: 192.168.1.26
+datacenter: 'MyownDataCenter'
+folder: CHEZ_MOI
+name: '{{ inventory_hostname }}'
+state: poweredon
+guest_id: debian10_64Guest
+annotation: "{{ notes }} - {{ creationdate }}"
+disk:
+- size_gb: 150
+type: thin
+datastore: '{{ vsphere_datastore }}'
+networks:
+- name: server_network
+ip: '{{ custom_ip }}'
+netmask: 255.255.252.0
+gateway: 192.168.1.254
+dns_servers:
+- 192.168.1.195
+- 192.168.1.252
+hardware:
+memory_mb: 4096
+num_cpus: 2
+customization:
+dns_servers:
+- 192.168.1.195
+- 192.168.1.252
+domain : kekam.local
+hostname: '{{ inventory_hostname }}'
+template: template_debian10
+wait_for_ip_address: yes    
